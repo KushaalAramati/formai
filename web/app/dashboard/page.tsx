@@ -6,6 +6,7 @@ import { getResult } from '@/lib/store';
 import { getExercise } from '@/lib/analysis/exercises';
 import { QUESTIONS, recommend, type Recommendation } from '@/lib/questions';
 import { KeyFrame } from '@/components/KeyFrame';
+import { MuscleMap } from '@/components/MuscleMap';
 import { addSession, lastWeightFor } from '@/lib/db';
 import type { FrameSample, SetResult, UserContext } from '@/lib/analysis/types';
 import type { Snapshot } from '@/lib/pose/frameCapture';
@@ -250,6 +251,9 @@ export default function Dashboard() {
           ))
         )}
       </div>
+
+      {/* 3D muscle map */}
+      <MuscleMap result={r} />
 
       {/* Coaching summary */}
       <div className="panel">
